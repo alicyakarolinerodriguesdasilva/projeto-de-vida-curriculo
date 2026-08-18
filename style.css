@@ -1,33 +1,39 @@
-/* Botão com Borda Transparente (Ghost/Outline Button) */
-.btn-outline {
-  background-color: transparent;
-  color: #dea6f8;
-  border: 2px solid #e8eaff;
+/* Configuração da página */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f9;
+}
+
+/* Layout do menu */
+.menu {
+  display: flex;
+  gap: 15px;
+}
+
+/* Estilo base dos botões */
+.btn {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #d6a1f5;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 0 #d4a9fc;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-.btn-outline:hover {
-  background-color: #f9faff;
-  color: #ffffff;
+/* Efeito ao passar o mouse (Hover) */
+.btn:hover {
+  background-color: #cfa1f5;
 }
 
-/* Botão Gradiente com Sombras Macias */
-.btn-gradient {
-  background: linear-gradient(135deg, #cd9eff 0%, #c5daff 100%);
-  color: #ffffff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 25px; /* Bordas arredondadas (Pill shape) */
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(197, 136, 238, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-gradient:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(157, 190, 248, 0.6);
+/* Efeito ao clicar no botão (Active) */
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #9cccff;
 }
