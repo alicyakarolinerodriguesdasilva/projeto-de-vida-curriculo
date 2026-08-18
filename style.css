@@ -2,11 +2,16 @@
 body {
   font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   min-height: 100vh;
   margin: 0;
   background-color: #f4f4f9;
+}
+
+/* Posição do cabeçalho */
+header {
+  margin-top: 40px;
 }
 
 /* Layout do menu */
@@ -31,6 +36,12 @@ body {
 /* Efeito ao clicar (aplicado a todos) */
 .btn:active {
   transform: translateY(4px);
+}
+
+/* Destaque para a página ativa */
+.btn.active {
+  outline: 3px solid #333;
+  outline-offset: 2px;
 }
 
 /* --- CORES ESPECÍFICAS DE CADA BOTÃO --- */
@@ -81,4 +92,16 @@ body {
 }
 .btn-contato:active {
   box-shadow: 0 0 0 #d96200;
+}
+
+/* Área de Conteúdo */
+.conteudo {
+  background-color: #ffffff;
+  padding: 40px;
+  margin-top: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
 }
