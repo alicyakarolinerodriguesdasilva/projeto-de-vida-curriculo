@@ -425,4 +425,6 @@ body.dark-theme .btn-toggle-tema .icone-sol {
   --borda-input: #323238;
   --bg-rodape: #18181b;
   --texto-rodape: #71717a;
+}.campo-linkedin input:focus {
+  border-color: #0a66c2; /* Cor azul do LinkedIn */
 }
