@@ -3,20 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contato - Meu Site</title>
+  <title>Contato - Meu Site com Gatinhos 🐾</title>
+
+  <script>
+    (function() {
+      const temaSalvo = localStorage.getItem('tema');
+      const prefereEscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (temaSalvo === 'dark' || (!temaSalvo && prefereEscuro)) {
+        document.documentElement.classList.add('dark-theme');
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <input type="checkbox" id="dark-mode-toggle" class="dark-mode-input">
-
   <header>
     <div class="topo-acoes">
-      <label for="dark-mode-toggle" class="btn-toggle-tema" title="Alternar Modo Escuro/Claro">
+      <button id="btn-toggle-tema" class="btn-toggle-tema" title="Alternar Modo Escuro/Claro">
         <i class="fa-solid fa-moon icone-lua"></i>
         <i class="fa-solid fa-sun icone-sol"></i>
-      </label>
+      </button>
     </div>
 
     <nav class="menu">
@@ -25,7 +34,7 @@
         Início
       </a>
       <a href="sobre.html" class="btn btn-sobre">
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-cat"></i>
         Sobre
       </a>
       <a href="servicos.html" class="btn btn-servicos">
@@ -40,10 +49,21 @@
   </header>
 
   <main class="conteudo animar-entrada">
-    <h1>Fale Conosco</h1>
+    <h1>Fale Conosco 🐱</h1>
     <p>Preencha o formulário abaixo para nos enviar uma mensagem.</p>
 
+    <!-- Botão para mostrar o campo do LinkedIn -->
+    <button type="button" id="btn-mostrar-linkedin" class="btn btn-sobre" style="margin-bottom: 20px;">
+      <i class="fa-brands fa-linkedin"></i> Adicionar meu LinkedIn
+    </button>
+
     <form class="formulario-contato" action="#" method="POST">
+      <!-- Campo de LinkedIn escondido por padrão -->
+      <div class="campo campo-linkedin" id="container-linkedin" style="display: none;">
+        <label for="url-linkedin">URL do seu LinkedIn:</label>
+        <input type="url" id="url-linkedin" name="url-linkedin" placeholder="https://www.linkedin.com/in/seuperfil">
+      </div>
+
       <div class="campo">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
@@ -74,8 +94,8 @@
   <footer class="rodape">
     <div class="rodape-conteudo">
       <div class="rodape-secao">
-        <h3>Meu Site</h3>
-        <p>Criando soluções web simples e eficientes.</p>
+        <h3>Meu Site 🐱</h3>
+        <p>Criando soluções web simples, eficientes e cheias de gatinhos.</p>
       </div>
 
       <div class="rodape-secao">
@@ -100,51 +120,10 @@
     </div>
 
     <div class="rodape-direitos">
-      <p>&copy; 2026 Meu Site. Todos os direitos reservados.</p>
+      <p>&copy; 2026 Meu Site de Gatinhos. Todos os direitos reservados. 🐾</p>
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Site</title>
-
-  <!-- Script que evita o FOUC executando antes de renderizar o body -->
-  <script>
-    (function() {
-      const temaSalvo = localStorage.getItem('tema');
-      const prefereEscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      if (temaSalvo === 'dark' || (!temaSalvo && prefereEscuro)) {
-        document.documentElement.classList.add('dark-theme');
-      }
-    })();
-  </script>
-
-  <link rel="stylesheet" href="style.css">
-</head><main class="conteudo animar-entrada">
-  <h1>Fale Conosco</h1>
-  <p>Preencha o formulário abaixo para nos enviar uma mensagem.</p>
-
-  <!-- Botão para mostrar o campo do LinkedIn -->
-  <button type="button" id="btn-mostrar-linkedin" class="btn btn-sobre" style="margin-bottom: 20px;">
-    <i class="fa-brands fa-linkedin"></i> Adicionar meu LinkedIn
-  </button>
-
-  <form class="formulario-contato" action="#" method="POST">
-    <!-- Novo campo oculto por padrão -->
-    <div class="campo campo-linkedin" id="container-linkedin" style="display: none;">
-      <label for="url-linkedin">URL do seu LinkedIn:</label>
-      <input type="url" id="url-linkedin" name="url-linkedin" placeholder="https://www.linkedin.com/in/seuperfil">
-    </div>
-
-    <div class="campo">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
-    </div>
-    
-    <!-- Restante do formulário... -->
-  </form>
-</main>
