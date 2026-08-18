@@ -1,4 +1,50 @@
-/* Configuração da página */
+/* --- VARIÁVEIS DE CORES (TEMA CLARO E ESCURO) --- */
+:root {
+  --bg-pagina: #f4f4f9;
+  --bg-card: #ffffff;
+  --texto-principal: #333333;
+  --texto-secundario: #666666;
+  --borda-input: #dddddd;
+  --bg-rodape: #2b2d42;
+  --texto-rodape: #adb5bd;
+  --destaque-ativa: #333333;
+}
+
+/* Suporte automático ao tema escuro do SO/Navegador */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-pagina: #121214;
+    --bg-card: #202024;
+    --texto-principal: #e1e1e6;
+    --texto-secundario: #a8a8b3;
+    --borda-input: #323238;
+    --bg-rodape: #18181b;
+    --texto-rodape: #71717a;
+    --destaque-ativa: #ffffff;
+  }
+}
+
+/* Ativação do Modo Escuro pelo Botão (Checkbox Ativado) */
+.dark-mode-input:checked ~ header,
+.dark-mode-input:checked ~ main,
+.dark-mode-input:checked ~ footer,
+.dark-mode-input:checked ~ body {
+  --bg-pagina: #121214;
+  --bg-card: #202024;
+  --texto-principal: #e1e1e6;
+  --texto-secundario: #a8a8b3;
+  --borda-input: #323238;
+  --bg-rodape: #18181b;
+  --texto-rodape: #71717a;
+  --destaque-ativa: #ffffff;
+}
+
+/* Esconde o checkbox real */
+.dark-mode-input {
+  display: none;
+}
+
+/* Configuração geral da página */
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -6,13 +52,59 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #f4f4f9;
+  background-color: var(--bg-pagina);
+  color: var(--texto-principal);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Posição do cabeçalho */
+/* Cabeçalho */
 header {
-  margin-top: 40px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
   animation: surgirconTopo 0.6s ease-out;
+}
+
+.topo-acoes {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* Botão de alternar tema */
+.btn-toggle-tema {
+  background-color: var(--bg-card);
+  color: var(--texto-principal);
+  border: 2px solid var(--borda-input);
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-toggle-tema .icone-sol {
+  display: none;
+  color: #f1c40f;
+}
+
+.btn-toggle-tema .icone-lua {
+  display: inline-block;
+  color: #f39c12;
+}
+
+/* Alterna os ícones quando ativado */
+.dark-mode-input:checked ~ header .btn-toggle-tema .icone-lua {
+  display: none;
+}
+
+.dark-mode-input:checked ~ header .btn-toggle-tema .icone-sol {
+  display: inline-block;
 }
 
 /* Layout do menu */
@@ -21,7 +113,7 @@ header {
   gap: 15px;
 }
 
-/* Estilo base compartilhado por todos os botões */
+/* Estilo base dos botões */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -38,20 +130,16 @@ header {
   transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-/* Efeito ao clicar (aplicado a todos) */
 .btn:active {
   transform: translateY(4px);
 }
 
-/* Destaque para a página ativa */
 .btn.active {
-  outline: 3px solid #333;
+  outline: 3px solid var(--destaque-ativa);
   outline-offset: 2px;
 }
 
-/* --- CORES ESPECÍFICAS DE CADA BOTÃO --- */
-
-/* 1. Botão Início (Azul) */
+/* --- CORES ESPECÍFICAS DOS BOTÕES --- */
 .btn-inicio {
   background-color: #007bff;
   box-shadow: 0 4px 0 #0056b3;
@@ -63,7 +151,6 @@ header {
   box-shadow: 0 0 0 #0056b3;
 }
 
-/* 2. Botão Sobre (Roxo) */
 .btn-sobre {
   background-color: #6f42c1;
   box-shadow: 0 4px 0 #512da8;
@@ -75,7 +162,6 @@ header {
   box-shadow: 0 0 0 #512da8;
 }
 
-/* 3. Botão Serviços (Verde) */
 .btn-servicos {
   background-color: #28a745;
   box-shadow: 0 4px 0 #1e7e34;
@@ -87,7 +173,6 @@ header {
   box-shadow: 0 0 0 #1e7e34;
 }
 
-/* 4. Botão Contato (Laranja) */
 .btn-contato {
   background-color: #fd7e14;
   box-shadow: 0 4px 0 #d96200;
@@ -101,24 +186,29 @@ header {
 
 /* Área de Conteúdo */
 .conteudo {
-  background-color: #ffffff;
+  background-color: var(--bg-card);
+  color: var(--texto-principal);
   padding: 40px;
   margin-top: 30px;
   margin-bottom: 50px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   width: 90%;
   box-sizing: border-box;
   flex: 1;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .conteudo h1, .conteudo p {
   text-align: center;
 }
 
-/* --- ESTILOS DO FORMULÁRIO DE CONTATO --- */
+.conteudo p {
+  color: var(--texto-secundario);
+}
 
+/* --- FORMULÁRIO DE CONTATO --- */
 .formulario-contato {
   display: flex;
   flex-direction: column;
@@ -134,18 +224,20 @@ header {
 
 .campo label {
   font-weight: bold;
-  color: #333;
+  color: var(--texto-principal);
   font-size: 0.95rem;
 }
 
 .campo input,
 .campo textarea {
   padding: 12px;
-  border: 2px solid #ddd;
+  border: 2px solid var(--borda-input);
+  background-color: var(--bg-pagina);
+  color: var(--texto-principal);
   border-radius: 6px;
   font-size: 1rem;
   font-family: inherit;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .campo input:focus,
@@ -159,15 +251,15 @@ header {
   margin-top: 10px;
 }
 
-/* --- ESTILOS DO RODAPÉ --- */
-
+/* --- RODAPÉ --- */
 .rodape {
-  background-color: #2b2d42;
+  background-color: var(--bg-rodape);
   color: #ffffff;
   width: 100%;
   margin-top: auto;
   padding-top: 40px;
   box-sizing: border-box;
+  transition: background-color 0.3s ease;
 }
 
 .rodape-conteudo {
@@ -191,7 +283,7 @@ header {
 }
 
 .rodape-secao p {
-  color: #adb5bd;
+  color: var(--texto-rodape);
   font-size: 0.9rem;
 }
 
@@ -206,7 +298,7 @@ header {
 }
 
 .rodape-secao ul li a {
-  color: #adb5bd;
+  color: var(--texto-rodape);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -222,7 +314,7 @@ header {
 
 .redes-sociais a {
   color: #ffffff;
-  background-color: #3d405b;
+  background-color: rgba(255, 255, 255, 0.1);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -240,16 +332,15 @@ header {
 }
 
 .rodape-direitos {
-  border-top: 1px solid #3d405b;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   margin-top: 30px;
   padding: 15px 0;
-  color: #8d99ae;
+  color: var(--texto-rodape);
   font-size: 0.85rem;
 }
 
-/* --- ANIMAÇÕES DE ENTRADA (KEYFRAMES) --- */
-
+/* --- ANIMAÇÕES DE ENTRADA --- */
 .animar-entrada {
   animation: surgirSuave 0.7s ease-out forwards;
 }
