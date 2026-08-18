@@ -7,7 +7,6 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: #f4f4f9;
-  padding-bottom: 40px;
 }
 
 /* Posição do cabeçalho */
@@ -104,11 +103,13 @@ header {
   background-color: #ffffff;
   padding: 40px;
   margin-top: 30px;
+  margin-bottom: 50px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   max-width: 600px;
   width: 90%;
   box-sizing: border-box;
+  flex: 1; /* Mantém o rodapé no final da página */
 }
 
 .conteudo h1, .conteudo p {
@@ -155,4 +156,93 @@ header {
 .btn-enviar {
   width: 100%;
   margin-top: 10px;
+}
+
+/* --- ESTILOS DO RODAPÉ --- */
+
+.rodape {
+  background-color: #2b2d42;
+  color: #ffffff;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+.rodape-conteudo {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.rodape-secao h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.rodape-secao h4 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.rodape-secao p {
+  color: #adb5bd;
+  font-size: 0.9rem;
+}
+
+.rodape-secao ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rodape-secao ul li {
+  margin-bottom: 8px;
+}
+
+.rodape-secao ul li a {
+  color: #adb5bd;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.rodape-secao ul li a:hover {
+  color: #ffffff;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 15px;
+}
+
+.redes-sociais a {
+  color: #ffffff;
+  background-color: #3d405b;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.redes-sociais a:hover {
+  background-color: #007bff;
+  transform: translateY(-3px);
+}
+
+.rodape-direitos {
+  border-top: 1px solid #3d405b;
+  text-align: center;
+  margin-top: 30px;
+  padding: 15px 0;
+  color: #8d99ae;
+  font-size: 0.85rem;
 }
