@@ -48,4 +48,25 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('tema', 'light');
     }
   });
+});document.addEventListener('DOMContentLoaded', () => {
+  // ... seu código do modo escuro aqui ...
+
+  // Lógica para mostrar/esconder o campo do LinkedIn
+  const btnLinkedin = document.getElementById('btn-mostrar-linkedin');
+  const containerLinkedin = document.getElementById('container-linkedin');
+  
+  if (btnLinkedin && containerLinkedin) {
+    btnLinkedin.addEventListener('click', () => {
+      // Alterna entre mostrar (block) e esconder (none)
+      if (containerLinkedin.style.display === 'none') {
+        containerLinkedin.style.display = 'block';
+        btnLinkedin.innerHTML = '<i class="fa-solid fa-xmark"></i> Ocultar LinkedIn';
+      } else {
+        containerLinkedin.style.display = 'none';
+        btnLinkedin.innerHTML = '<i class="fa-brands fa-linkedin"></i> Adicionar meu LinkedIn';
+        // Opcional: limpa o campo se o usuário ocultar
+        document.getElementById('url-linkedin').value = '';
+      }
+    });
+  }
 });
