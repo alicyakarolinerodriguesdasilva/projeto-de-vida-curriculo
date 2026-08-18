@@ -200,4 +200,79 @@ header {
   margin-top: 30px;
   padding: 15px 0;
   color: var(--texto-rodape);
+}/* Fundo da página */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFF9C4; /* Amarelo bem clarinho */
+    color: #1E3A5F;
+    text-align: center;
 }
+
+/* Área principal */
+.conteudo-principal {
+    margin-top: 80px;
+    padding: 30px;
+}
+
+/* Título */
+.titulo-principal {
+    font-size: 42px;
+    color: #1565C0; /* Azul */
+}
+
+.titulo-principal span {
+    color: #64B5F6; /* Azul clarinho */
+}
+
+/* Botões */
+.botoes {
+    margin-top: 40px;
+}
+
+button {
+    background-color: #BBDEFB; /* Azul clarinho */
+    color: #0D47A1;
+    border: 2px solid #64B5F6;
+    border-radius: 12px;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+    background-color: #90CAF9;
+    transform: scale(1.05);
+}
+
+/* Páginas internas */
+h1 {
+    color: #1565C0;
+    margin-top: 50px;
+}
+
+p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+/* Link de voltar */
+a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #BBDEFB;
+    color: #0D47A1;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: #90CAF9;
