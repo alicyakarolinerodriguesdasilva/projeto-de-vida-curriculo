@@ -124,4 +124,27 @@
   </script>
 
   <link rel="stylesheet" href="style.css">
-</head>
+</head><main class="conteudo animar-entrada">
+  <h1>Fale Conosco</h1>
+  <p>Preencha o formulário abaixo para nos enviar uma mensagem.</p>
+
+  <!-- Botão para mostrar o campo do LinkedIn -->
+  <button type="button" id="btn-mostrar-linkedin" class="btn btn-sobre" style="margin-bottom: 20px;">
+    <i class="fa-brands fa-linkedin"></i> Adicionar meu LinkedIn
+  </button>
+
+  <form class="formulario-contato" action="#" method="POST">
+    <!-- Novo campo oculto por padrão -->
+    <div class="campo campo-linkedin" id="container-linkedin" style="display: none;">
+      <label for="url-linkedin">URL do seu LinkedIn:</label>
+      <input type="url" id="url-linkedin" name="url-linkedin" placeholder="https://www.linkedin.com/in/seuperfil">
+    </div>
+
+    <div class="campo">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+    </div>
+    
+    <!-- Restante do formulário... -->
+  </form>
+</main>
