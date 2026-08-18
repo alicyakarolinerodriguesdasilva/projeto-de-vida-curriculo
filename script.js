@@ -69,4 +69,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+});document.addEventListener('DOMContentLoaded', () => {
+  const formulario = document.querySelector('.formulario-contato');
+  const inputLinkedin = document.getElementById('url-linkedin');
+
+  formulario.addEventListener('submit', (event) => {
+    const urlDigitada = inputLinkedin.value.trim();
+
+    // Valida apenas se o campo foi preenchido (se não for obrigatório)
+    if (urlDigitada.length > 0) {
+      const regexLinkedIn = /^(https?:\/\/)?(www\.)?linkedin\.com\/in\/[a-zA-Z0-9-_\/]+$/i;
+
+      if (!regexLinkedIn.test(urlDigitada)) {
+        event.preventDefault(); // Impede o envio do formulário
+        alert('Por favor, insira uma URL válida do LinkedIn (ex: linkedin.com/in/seu-nome)');
+        inputLinkedin.focus();
+      }
+    }
+  });
 });
