@@ -1,3 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Meu Site</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <input type="checkbox" id="dark-mode-toggle" class="dark-mode-input">
+
+  <header>
+    <div class="topo-acoes">
+      <label for="dark-mode-toggle" class="btn-toggle-tema" title="Alternar Modo Escuro/Claro">
+        <i class="fa-solid fa-moon icone-lua"></i>
+        <i class="fa-solid fa-sun icone-sol"></i>
+      </label>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html" class="btn btn-inicio">
+        <i class="fa-solid fa-house"></i>
+        Início
+      </a>
+      <a href="sobre.html" class="btn btn-sobre">
+        <i class="fa-solid fa-user"></i>
+        Sobre
+      </a>
+      <a href="servicos.html" class="btn btn-servicos">
+        <i class="fa-solid fa-gear"></i>
+        Serviços
+      </a>
+      <a href="contato.html" class="btn btn-contato active">
+        <i class="fa-solid fa-envelope"></i>
+        Contato
+      </a>
+    </nav>
+  </header>
+
+  <main class="conteudo animar-entrada">
+    <h1>Fale Conosco</h1>
+    <p>Preencha o formulário abaixo para nos enviar uma mensagem.</p>
+
+    <form class="formulario-contato" action="#" method="POST">
+      <div class="campo">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+      </div>
+
+      <div class="campo">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+      </div>
+
+      <div class="campo">
+        <label for="assunto">Assunto:</label>
+        <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" required>
+      </div>
+
+      <div class="campo">
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-contato btn-enviar">
+        <i class="fa-solid fa-paper-plane"></i>
+        Enviar Mensagem
+      </button>
+    </form>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-conteudo">
+      <div class="rodape-secao">
+        <h3>Meu Site</h3>
+        <p>Criando soluções web simples e eficientes.</p>
+      </div>
+
+      <div class="rodape-secao">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="rodape-secao">
+        <h4>Redes Sociais</h4>
+        <div class="redes-sociais">
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rodape-direitos">
+      <p>&copy; 2026 Meu Site. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
