@@ -15,28 +15,70 @@ body {
   gap: 15px;
 }
 
-/* Estilo base dos botões */
+/* Estilo base compartilhado por todos os botões */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px; /* Espaçamento entre o ícone e o texto */
+  gap: 8px;
   text-decoration: none;
   color: #ffffff;
-  background-color: #007bff;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: bold;
-  box-shadow: 0 4px 0 #0056b3;
   transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-/* Efeito ao passar o mouse (Hover) */
-.btn:hover {
-  background-color: #0069d9;
-}
-
-/* Efeito ao clicar no botão (Active) */
+/* Efeito ao clicar (aplicado a todos) */
 .btn:active {
   transform: translateY(4px);
+}
+
+/* --- CORES ESPECÍFICAS DE CADA BOTÃO --- */
+
+/* 1. Botão Início (Azul) */
+.btn-inicio {
+  background-color: #007bff;
+  box-shadow: 0 4px 0 #0056b3;
+}
+.btn-inicio:hover {
+  background-color: #0069d9;
+}
+.btn-inicio:active {
   box-shadow: 0 0 0 #0056b3;
+}
+
+/* 2. Botão Sobre (Roxo) */
+.btn-sobre {
+  background-color: #6f42c1;
+  box-shadow: 0 4px 0 #512da8;
+}
+.btn-sobre:hover {
+  background-color: #5a32a3;
+}
+.btn-sobre:active {
+  box-shadow: 0 0 0 #512da8;
+}
+
+/* 3. Botão Serviços (Verde) */
+.btn-servicos {
+  background-color: #28a745;
+  box-shadow: 0 4px 0 #1e7e34;
+}
+.btn-servicos:hover {
+  background-color: #218838;
+}
+.btn-servicos:active {
+  box-shadow: 0 0 0 #1e7e34;
+}
+
+/* 4. Botão Contato (Laranja) */
+.btn-contato {
+  background-color: #fd7e14;
+  box-shadow: 0 4px 0 #d96200;
+}
+.btn-contato:hover {
+  background-color: #e86800;
+}
+.btn-contato:active {
+  box-shadow: 0 0 0 #d96200;
 }
