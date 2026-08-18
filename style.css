@@ -406,4 +406,23 @@ body.dark-theme .btn-toggle-tema .icone-lua {
 
 body.dark-theme .btn-toggle-tema .icone-sol {
   display: inline-block;
+}:root {
+  --bg-pagina: #f4f4f9;
+  --bg-card: #ffffff;
+  --texto-principal: #333333;
+  --texto-secundario: #666666;
+  --borda-input: #dddddd;
+  --bg-rodape: #2b2d42;
+  --texto-rodape: #adb5bd;
+}
+
+/* Aplicado imediatamente via script no <head> */
+:root.dark-theme {
+  --bg-pagina: #121214;
+  --bg-card: #202024;
+  --texto-principal: #e1e1e6;
+  --texto-secundario: #a8a8b3;
+  --borda-input: #323238;
+  --bg-rodape: #18181b;
+  --texto-rodape: #71717a;
 }
