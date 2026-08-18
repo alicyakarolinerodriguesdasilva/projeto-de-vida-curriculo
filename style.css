@@ -365,4 +365,45 @@ header {
     opacity: 1;
     transform: translateY(0);
   }
+}/* Definição de Variáveis de Tema */
+:root {
+  --bg-pagina: #f4f4f9;
+  --bg-card: #ffffff;
+  --texto-principal: #333333;
+  --texto-secundario: #666666;
+  --borda-input: #dddddd;
+  --bg-rodape: #2b2d42;
+  --texto-rodape: #adb5bd;
+  --destaque-ativa: #333333;
+}
+
+/* Aplicado via JavaScript quando o Modo Escuro está ativo */
+body.dark-theme {
+  --bg-pagina: #121214;
+  --bg-card: #202024;
+  --texto-principal: #e1e1e6;
+  --texto-secundario: #a8a8b3;
+  --borda-input: #323238;
+  --bg-rodape: #18181b;
+  --texto-rodape: #71717a;
+  --destaque-ativa: #ffffff;
+}
+
+/* Visibilidade dos ícones de Sol e Lua */
+.btn-toggle-tema .icone-sol {
+  display: none;
+  color: #f1c40f;
+}
+
+.btn-toggle-tema .icone-lua {
+  display: inline-block;
+  color: #f39c12;
+}
+
+body.dark-theme .btn-toggle-tema .icone-lua {
+  display: none;
+}
+
+body.dark-theme .btn-toggle-tema .icone-sol {
+  display: inline-block;
 }
